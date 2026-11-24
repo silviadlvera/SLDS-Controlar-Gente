@@ -259,6 +259,222 @@
 \section{Control cotidiano}
 \bloque{2}{Control cotidiano: del crédito\\social al altavoz de casa}{Ossama}
 
+\newcommand{\cifram}[2]{%
+  \begin{center}
+    {\color{terra}\fontsize{26}{30}\selectfont\bfseries #1}\\[0.15cm]
+    {\normalsize #2}
+  \end{center}}
+
+% 3.1 · China: tres capas (escenas 1 y 2)
+\begin{frame}{China: ¿una nota para cada persona?}
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}Lista negra}\end{center}
+      \cifram{8,3\,M}{nombres en la lista del Tribunal Popular Supremo (2024)}
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}Piloto local}\end{center}
+      \cifram{1.000}{puntos en Rongcheng, de AAA a D. Con AA o más: 3 puntos menos de interés}
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}Privado y voluntario}\end{center}
+      \cifram{350--950}{puntos en Zhima Credit (Ant Group)}
+  \end{columns}
+  \vspace{0.3cm}
+  \begin{center}
+    {\large\alert{Un sistema de castigos, no una nota de buena conducta.}}
+  \end{center}
+  \fuente{Wall Street Journal (04/2024) · China Daily (07/2018) · Normativa de Rongcheng · Zhima Credit (The Paper, citando a Ant)}
+\end{frame}
+
+% 3.1 · Occidente (escena 3)
+\begin{frame}{En Occidente, con otro nombre}
+  \begin{itemize}
+    \item EE.\,UU.: FICO (300--850) · España: CIRBE, Equifax, Experian · Alemania: SCHUFA
+    \item \alert{\textbf{TJUE (2023):}} el \textit{score} es una decisión automatizada
+    \item UE: \alert{\textbf{social scoring prohibido}} desde 2025
+    \item Scoring de crédito: alto riesgo, aplazado a dic.\,2027
+  \end{itemize}
+  \fuente{TJUE, C-634/21 (07/12/2023) · Reglamento (UE) 2024/1689 (art.\,113 y anexo III) y 2026/1744}
+\end{frame}
+
+% 3.1 · Estado (escena 4)
+\begin{frame}{Cuando lo usa el Estado}
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}SyRI (Países Bajos)}\end{center}
+      \cifram{17}{categorías de datos cruzadas. Prohibido en 2020 (art.\,8 CEDH)}
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}BOSCO (España)}\end{center}
+      \cifram{8 meses}{tras la sentencia del Supremo, Civio seguía sin el código (mayo 2026)}
+    \column{0.31\textwidth}
+      \begin{center}{\large\bfseries\color{azul}PredPol}\end{center}
+      \cifram{$<$\,0,5\,\%}{de acierto en Plainfield (2023). Cerró ese año}
+  \end{columns}
+  \fuente{Tribunal de La Haya (05/02/2020) · Civio (14/05/2026) · The Markup (02/10/2023)}
+\end{frame}
+
+% 3.2 · Singapur (escena 5)
+\begin{frame}{Singapur: la promesa rota}
+  \begin{center}
+  \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,minimum width=3.6cm,minimum height=2.1cm,align=center,font=\normalsize},
+      flecha/.style={->,very thick,draw=gris}]
+    \node[caja] (a) at (0,0) {\textbf{Jun. 2020}\\«Solo para\\rastrear contactos»};
+    \node[caja] (b) at (4.7,0) {\textbf{Ene. 2021}\\La policía puede\\pedir los datos};
+    \node[caja,draw=terra] (c) at (9.4,0) {\textbf{Feb. 2021}\\Una ley lo limita\\a 7 delitos graves};
+    \draw[flecha] (a) -- (b);
+    \draw[flecha] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{center}
+    {\large TraceTogether: más del \alert{\textbf{90\,\%}} de la población, según el Gobierno}
+  \end{center}
+  \fuente{Gobierno de Singapur (MDDI) · Mothership (cronología, 2021)}
+\end{frame}
+
+% 3.2 · Centralizado frente a descentralizado (escena 5)
+\begin{frame}{Dónde se guardan los datos}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \begin{center}{\large\bfseries\color{terra}Centralizado}\\[-0.1cm]{\normalsize TraceTogether}\end{center}
+      \begin{itemize}
+        \item Datos en manos del Estado
+        \item La policía pudo pedirlos
+      \end{itemize}
+    \column{0.45\textwidth}
+      \begin{center}{\large\bfseries\color{azul}Descentralizado}\\[-0.1cm]{\normalsize DP-3T / GAEN}\end{center}
+      \begin{itemize}
+        \item Identificadores que cambian
+        \item La comprobación, en tu móvil
+        \item Radar COVID: Indra, código público
+      \end{itemize}
+  \end{columns}
+  {\normalsize\alert{La AEPD apercibió al Gobierno por incumplir el RGPD.}}
+  \fuente{DP-3T · Google/Apple GAEN · AEPD, PS/00222/2021 · github.com/RadarCOVID}
+\end{frame}
+
+% 3.3 · Micrófono siempre atento (escena 6)
+\begin{frame}{Un micrófono siempre atento}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \cifram{1,5--19}{falsas activaciones al día por altavoz, con audio de series (2020)}
+    \column{0.45\textwidth}
+      \cifram{13--15\,\%}{sabía que sus datos se guardan indefinidamente (2025)}
+  \end{columns}
+  \vspace{0.2cm}
+  \begin{center}
+    {\large 2019: Amazon, Google y Apple tenían \alert{revisores humanos}}
+  \end{center}
+  \fuente{Northeastern e Imperial College (2020) · Acosta y Reinhardt, Computers \& Security (2025) · prensa (2019)}
+\end{frame}
+
+% 3.3 · Amazon: del audio a la publicidad (escena 6)
+\begin{frame}{Amazon: del audio a la publicidad}
+  \begin{itemize}
+    \item \alert{\textbf{25\,M\$}} de multa (2023) por conservar voces de niños
+    \item Mar.\,2025: sin opción local en 3 modelos de Echo (EE.\,UU.)
+  \end{itemize}
+  \vspace{0.2cm}
+  \begin{center}
+  \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,minimum width=3.4cm,minimum height=1.3cm,align=center,font=\normalsize},
+      flecha/.style={<->,very thick,draw=gris}]
+    \node[caja,draw=terra] (a) at (0,0) {Amazon\\(voz de Alexa)};
+    \node[caja] (b) at (5.0,0) {41\\anunciantes};
+    \node[caja] (c) at (10.0,0) {247\\terceros};
+    \draw[flecha] (a) -- node[above,font=\small,text=gris]{cookies} (b);
+    \draw[->,very thick,draw=gris] (b) -- node[above,font=\small,text=gris]{comparten} (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.1cm}
+  {\large Solo el \alert{\textbf{2,2\,\%}} de las skills deja claras sus prácticas de datos}
+  \fuente{FTC y DOJ (31/05/2023) · AP (03/2025) · «Your Echos are Heard» (IMC 2023)}
+\end{frame}
+
+% 3.3 · Móvil sin GPS (escena 7)
+\begin{frame}{Tu móvil te localiza sin GPS}
+  \begin{center}
+  \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,minimum width=3.6cm,minimum height=1.6cm,align=center,font=\normalsize},
+      flecha/.style={->,very thick,draw=gris}]
+    \node[caja] (a) at (0,0) {Tu móvil capta\\los routers cercanos};
+    \node[caja] (b) at (4.7,0) {Base de datos\\(Apple)};
+    \node[caja,draw=terra] (c) at (9.4,0) {Se localiza\\el router};
+    \draw[flecha] (a) -- (b);
+    \draw[flecha] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \cifra{2.000 M}{de direcciones de routers localizadas en un año}
+  \fuente{Rye y Levin, IEEE S\&P 2024}
+\end{frame}
+
+% 3.4 · Home Assistant (escena 8)
+\begin{frame}{Asistente de voz sin nube: Home Assistant}
+  \begin{center}
+  \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,minimum width=2.8cm,minimum height=1.5cm,align=center,font=\normalsize},
+      flecha/.style={->,very thick,draw=gris}]
+    \node[caja] (a) at (0,0) {Voice PE\\(ESPHome)};
+    \node[caja] (b) at (3.6,0) {Whisper\\voz $\to$ texto};
+    \node[caja,draw=terra] (c) at (7.2,0) {Home\\Assistant};
+    \node[caja] (d) at (10.8,0) {Piper\\texto $\to$ voz};
+    \draw[flecha] (a) -- (b);
+    \draw[flecha] (b) -- (c);
+    \draw[flecha] (c) -- (d);
+    \draw[dashed,thick,gris,rounded corners=6pt] (-1.6,-1.1) rectangle (12.4,1.1);
+    \node[font=\small,text=gris,fill=white] at (5.4,-1.1) {Protocolo Wyoming · todo en tu red local};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item Open Home Foundation: código abierto
+    \item Requiere un equipo con cierta potencia
+    \item Matter: nuevo servidor basado en matter.js (jun.\,2026)
+  \end{itemize}
+  \fuente{Documentación de Home Assistant (voz local) · Open Home Foundation}
+\end{frame}
+
+% 3.4 · F-Droid (escena 8)
+\begin{frame}{F-Droid: solo software libre}
+  \cifra{10}{etiquetas Anti-Features: anuncios, rastreo, dependencias no libres}
+  \begin{itemize}
+    \item Compilaciones reproducibles, donde es posible
+    \item La app se compila desde el código y se compara con la del desarrollador
+    \item \alert{No es una auditoría de seguridad de cada app}
+  \end{itemize}
+  \fuente{f-droid.org · Anti-Features y Reproducible Builds}
+\end{frame}
+
+% 3.4 · Sistemas operativos libres (escena 8)
+\begin{frame}{Un móvil sin Google}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \begin{center}{\large\bfseries\color{azul}Android sin servicios de Google}\end{center}
+      \begin{itemize}
+        \item GrapheneOS: seguridad
+        \item /e/OS: con microG
+      \end{itemize}
+    \column{0.45\textwidth}
+      \begin{center}{\large\bfseries\color{terra}Linux móvil}\end{center}
+      \begin{itemize}
+        \item Ubuntu Touch
+        \item En algunos Fairphone
+      \end{itemize}
+  \end{columns}
+  \vspace{0.3cm}
+  {\large\alert{Límite: la Play Integrity API puede bloquear apps bancarias.}}
+  \fuente{GrapheneOS · /e/OS · Ubuntu Touch (devices.ubuntu-touch.io) · Google Play Integrity}
+\end{frame}
+
+% 3.5 · Conclusión del bloque (escena 9)
+\begin{frame}{En casa y en el bolsillo, el código decide}
+  \vspace{0.3cm}
+  {\Large Código cerrado: \alert{\textbf{promesas}}.\par}
+  \vspace{0.8cm}
+  {\Large Código abierto y datos en local: garantías verificables.\par}
+\end{frame}
+
+
 % ============================================================
 % BLOQUE 3 · MAR
 % ============================================================
