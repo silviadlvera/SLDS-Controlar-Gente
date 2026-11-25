@@ -72,15 +72,38 @@
 \end{frame}
 
 % ============================================================
-% PRESENTACIÓN
+% APERTURA (la dice Silvia)
+% Sobre la portada: gancho de Milwaukee (Josue Ayala, 179 búsquedas).
 % ============================================================
 \section{Presentación}
-\begin{frame}{Presentación}
-  \vspace{0.2cm}
-  {\large\alert{El software decide qué se vigila, qué se publica, cómo se vota y quién accede al Estado.}}
+% 2.1a · Code is Law (Lessig), justo cuando lo nombra
+\begin{frame}{El código es ley}
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{azul}\fontsize{40}{46}\selectfont\bfseries «Code is Law»\par}
+    \vspace{0.3cm}
+    {\Large\color{gris} Lawrence Lessig\par}
+    \vspace{0.9cm}
+    {\Large Reglas como una ley, pero que \alert{\textbf{nadie vota}}\par}
+  \end{center}
+\end{frame}
 
-  Solo el software libre permite a la ciudadanía auditar esas decisiones.
+% 2.1b · Tesis del grupo
+\begin{frame}{Nuestra tesis}
+  \vspace{0.2cm}
+  {\large El software decide:}
+  \begin{itemize}
+    \item a quién se vigila
+    \item qué se publica
+    \item cómo se vota
+    \item cómo tratamos con la administración
+  \end{itemize}
   \vspace{0.3cm}
+  {\large Solo si es \alert{\textbf{libre}} podemos comprobar sus reglas.}
+\end{frame}
+
+% 2.1c · Índice (gesto hacia la pantalla, sin leerlo)
+\begin{frame}{Cinco temas}
   \begin{enumerate}
     \item Reconocimiento facial y cámaras con IA \hfill \textit{Silvia}
     \item Control diario: del crédito social al altavoz de casa \hfill \textit{Ossama}
@@ -142,8 +165,19 @@
   \end{tikzpicture}\\[0.2cm]
   {\large\textcolor{terra}{\rule{0.35cm}{0.35cm}}~Mujeres de piel oscura\qquad\textcolor{gris}{\rule{0.35cm}{0.35cm}}~Hombres de piel clara}
   \end{center}
-  {\large NIST: falsos positivos de \alert{\textbf{10 a 100 veces}} más según demografía}
-  \fuente{Buolamwini y Gebru, PMLR 81 (2018) · NIST IR 8280 (2019)}
+  \fuente{Buolamwini y Gebru, PMLR 81 (2018)}
+\end{frame}
+
+% 2.3b · NIST (tras el silencio de 2 s)
+\begin{frame}{El mito de la neutralidad algorítmica}
+  \vspace{0.2cm}
+  \cifra{de 10 a +100}{veces más falsos positivos según el grupo}
+  \begin{center}
+    {\large NIST: \textbf{189} programas revisados\par}
+    \vspace{0.6cm}
+    {\large Software libre: libertad de \alert{\textbf{estudiar}} el código\par}
+  \end{center}
+  \fuente{NIST IR 8280 (2019)}
 \end{frame}
 
 % 2.4 · Marco legal
@@ -151,7 +185,6 @@
   \begin{itemize}
     \item Biometría remota en tiempo real: \alert{\textbf{prohibida}}*
     \item Bases faciales por \textit{scraping} masivo: prohibidas
-    \item Identificación diferida: sistema de alto riesgo
     \item ¿Y una matrícula? \textbf{No es biometría}
   \end{itemize}
   \fuente{* Uso policial, salvo 3 excepciones · Reglamento (UE) 2024/1689}
@@ -162,9 +195,10 @@
 % con licencia CC BY / CC BY-SA, ponedla en una columna a la derecha.)
 \begin{frame}{Flock Safety: vigilancia sin rostro}
   \begin{itemize}
-    \item \alert{\textbf{+120.000}} cámaras en 49 estados
-    \item Sin reconocimiento facial: «huella del vehículo»
-    \item Matrícula, color, marca, baca, pegatinas
+    \item \textbf{+120.000} cámaras en 49 estados
+    \item Sin caras: «huella del vehículo»
+    \item Matrícula, color, marca, modelo, baca, pegatinas
+    \item Software \alert{\textbf{privativo}}: nadie puede estudiarlo
   \end{itemize}
   \fuente{Sen. Hawley (26/08/2026) · Robinson v. Commonwealth (Virginia, 2026)}
 \end{frame}
@@ -185,10 +219,10 @@
 % 2.7 · Controversias
 \begin{frame}{Abusos sin orden judicial}
   \begin{itemize}
-    \item Sin orden judicial: los tribunales lo avalan, por ahora
+    \item Sin orden judicial: Virginia lo avala (2026)
     \item Al menos 50 agentes acusados de uso indebido
     \item 26 de ellos, por espiar a parejas o exparejas
-    \item Un agente: \alert{\textbf{2.048}} búsquedas sobre su víctima
+    \item Kentucky: \alert{\textbf{2.048}} búsquedas a su expareja
   \end{itemize}
   \fuente{Robinson v. Commonwealth · Washington Post (04/08/2026) · CNN}
 \end{frame}
@@ -199,19 +233,16 @@
     \column{0.31\textwidth}
       \begin{center}
         {\color{azul}\fontsize{44}{48}\selectfont\bfseries 8}\\[0.2cm]
-        {\large\bfseries Puerta delantera}\\[0.1cm]
         {\large Acceso directo dado a la Patrulla Fronteriza}
       \end{center}
     \column{0.31\textwidth}
       \begin{center}
         {\color{terra}\fontsize{44}{48}\selectfont\bfseries 10}\\[0.2cm]
-        {\large\bfseries Puerta trasera}\\[0.1cm]
         {\large Redes consultadas por la Patrulla sin permiso}
       \end{center}
     \column{0.31\textwidth}
       \begin{center}
         {\color{azul}\fontsize{44}{48}\selectfont\bfseries 89}\\[0.2cm]
-        {\large\bfseries Puerta lateral}\\[0.1cm]
         {\large Redes en una búsqueda local con motivo «ICE»}
       \end{center}
   \end{columns}
@@ -223,36 +254,58 @@
 % del Institute for Justice, 247 (The Marshall Project, 03/10/2026).
 \begin{frame}{La presión ciudadana frena la red}
   \begin{itemize}
-    \item \alert{\textbf{247}} gobiernos locales abandonan sus lectores de matrículas
-    \item Denver y Mountain View rompen con Flock
-    \item Amazon Ring cancela su alianza (feb. 2026)
-    \item El Senado de EE.\,UU. abre una investigación
+    \item \alert{\textbf{247}} gobiernos locales dejan sus cámaras de matrículas
+    \item Denver deja Flock\ldots{} y contrata a \textbf{Axon}
+    \item Amazon Ring rompe con Flock (feb. 2026)
+    \item El Senado de EE.\,UU. investiga a Flock
   \end{itemize}
-  \fuente{Institute for Justice, vía The Marshall Project (03/10/2026) · Ring (12/02/2026) · Sen. Hawley}
+  \fuente{Institute for Justice, vía The Marshall Project (03/10/2026) · Denver Post (24/02/2026) · Ring (12/02/2026) · Sen. Hawley}
 \end{frame}
 
-% 2.10 · Alternativa libre
+% 2.10 · Software libre: recuperar el control (tres diapositivas)
 % (Si añadís una captura del mapa de maps.deflock.org u OpenStreetMap,
 % indicad «Datos © OpenStreetMap contributors, ODbL».)
-% CORREGIDO 23/11/2026: Pew cuenta las cámaras en OpenStreetMap, no «de DeFlock».
-\begin{frame}{DeFlock: auditar con software libre}
+% 2.10a · Cita de Stallman
+\begin{frame}{Software libre: recuperar el control}
+  \vspace{0.8cm}
+  \begin{center}
+  {\fontsize{26}{34}\selectfont «Que tú \alert{\textbf{controles}} el programa,\\
+   en vez de que él te controle a ti»\par}
+  \vspace{0.5cm}
+  {\Large\color{gris} Richard Stallman, 1986\par}
+  \end{center}
+  \fuente{«so that you can control it instead of it controlling you» · FSF, 1986}
+\end{frame}
+
+% 2.10b · DeFlock
+\begin{frame}{DeFlock: vigilar al que vigila}
   \begin{itemize}
-    \item DeFlock (MIT): mapa ciudadano en \textbf{OpenStreetMap}
-    \item \alert{\textbf{109.577}} cámaras Flock en OpenStreetMap
-    \item Frigate (MIT): matrículas en tu propio servidor
+    \item Programa libre (MIT) con voluntarios
+    \item Marcan cada cámara en \textbf{OpenStreetMap}
+    \item \alert{\textbf{109.577}} cámaras Flock mapeadas
+    \item Sabemos dónde están, no cómo funcionan
+  \end{itemize}
+  \fuente{deflock.org · Pew Research Center (09/11/2026)}
+\end{frame}
+
+% 2.10c · Frigate
+\begin{frame}{Frigate: los datos se quedan en casa}
+  \begin{itemize}
+    \item Lee matrículas en tu \textbf{propio} ordenador
+    \item Licencia MIT: cualquiera puede leer el código
     \item Local $\neq$ inocuo: cambia quién controla
   \end{itemize}
-  \fuente{deflock.org · Pew Research Center (09/11/2026) · Frigate NVR}
+  \fuente{Frigate NVR (github.com/blakeblackshear/frigate)}
 \end{frame}
 
-% 2.11 · Conclusión del bloque
+% 2.11 · Conclusión del bloque: vuelta a Lessig
 \begin{frame}{En la calle, el código ya es ley}
   \vspace{0.3cm}
-  {\Large Infraestructura \alert{\textbf{privada}} y opaca: vigilancia sin control democrático.\par}
+  {\Large Decide el programa de Flock, \alert{\textbf{no un parlamento}}.\par}
   \vspace{0.8cm}
-  {\Large Código y datos abiertos: de promesas a garantías verificables.\par}
+  {\Large Código libre: de promesas a garantías verificables.\par}
+  \fuente{«Code is Law» · Lawrence Lessig}
 \end{frame}
-
 % ============================================================
 % BLOQUE 2 · OSSAMA
 % ============================================================
