@@ -843,7 +843,168 @@
 % BLOQUE 5 · ONA
 % ============================================================
 \section{Administración electrónica}
-\bloque{5}{Administración electrónica}{Ona}
+\bloque{5}{Administración electrónica:\\¿derechos o barreras?}{Ona}
+
+% 6.1 · Apertura (gancho de la baja médica y el 92 %)
+\begin{frame}{Cuando el papel desaparece}
+  \begin{columns}[T]
+    \column{0.47\textwidth}
+      \cifra{10 días}{naturales para entrar con Cl@ve y firmar}
+    \column{0.47\textwidth}
+      \cifra{92\,\%}{mayores de 75 años sin habilidades básicas}
+  \end{columns}
+  \fuente{Orden ISM/541/2026 (01/09/2026) · Fundación Telefónica (dic.\,2025)}
+\end{frame}
+
+% 6.2 · Tesis (una sola idea, lectura en 3 segundos)
+\begin{frame}{Una opción suma. La única puerta resta.}
+  \vspace{0.5cm}
+  \begin{center}
+    {\Large La administración digital es buena cuando \alert{\textbf{se puede elegir}}.}\\[0.6cm]
+    {\large Solo si el código es abierto podemos auditar sus reglas.}
+  \end{center}
+\end{frame}
+
+% 6.3 · Estonia
+\begin{frame}{Estonia: el ahorro es real}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \cifra{99\,\%}{de los servicios públicos, en línea}
+    \column{0.45\textwidth}
+      \cifra{3 min}{para la declaración (98\,\% en línea)}
+  \end{columns}
+  \fuente{e-Estonia (datos del Gobierno de Estonia)}
+\end{frame}
+
+% 6.4 · España: el doble muro
+\begin{frame}{España: el «doble muro» digital}
+  \begin{center}
+    \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,text width=5.2cm,minimum height=1.7cm,align=center,font=\normalsize},
+      flecha/.style={->,>=stealth,line width=1.8pt,draw=gris}]
+    \node[caja] (a) at (0,0) {\textbf{1. Notificación digital}\\[0.1cm]10 días con Cl@ve};
+    \node[caja,draw=terra] (b) at (7.0,0) {\textbf{2. Ayuda presencial}\\[0.1cm]Cita previa online};
+    \draw[flecha] (a.east) -- (b.west);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.35cm}
+  \begin{center}
+    {\normalsize El ahorro lo mide la Administración;\\el coste lo paga quien queda fuera.}
+  \end{center}
+  \fuente{Orden ISM/541/2026 · La Región (11/04/2026)}
+\end{frame}
+
+% 6.5 · Tres de cada diez
+\begin{frame}{¿Quién queda fuera?}
+  \cifra{3 de cada 10}{no llegan a habilidades digitales básicas (16--74 años)}
+  \fuente{INE, TIC-H 2026: 26,6\,\% habilidades bajas + 2,4\,\% sin uso de internet}
+\end{frame}
+
+% 6.6 · Gráfico de barras (guía visual por color: gris vs. terra)
+\begin{frame}{Sin habilidades digitales básicas (\%)}
+  \begin{center}
+  \begin{tikzpicture}[x=1cm,y=0.042cm,font=\large]
+    \foreach \val/\lab/\col [count=\i from 0] in
+        {43/Rural/gris,59/65--74 años/gris,92/$>$75 años/terra}{
+      \fill[\col] (\i*2.8,0) rectangle (\i*2.8+1.8,\val);
+      \node[above,font=\large\bfseries,text=\col] at (\i*2.8+0.9,\val) {\val\,\%};
+      \node[below] at (\i*2.8+0.9,0) {\lab};}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.2cm}
+  \fuente{ONTSI 2024 (rural) · Fundación Telefónica 2025 (edad)}
+\end{frame}
+
+% 6.7 · Ventanilla (3 puntos cortos, máx. 1 nivel de indentación)
+\begin{frame}{La respuesta llega por la ventanilla}
+  \begin{itemize}
+    \item \textbf{Cataluña (Ley 9/2025):} cita previa prohibida como obligación.
+    \item \textbf{Congreso (mayo 2026):} pide extenderlo al Estado (\alert{\textbf{no es ley}}).
+    \item \textbf{Defensor del Pueblo:} pide atención presencial sin cita.
+  \end{itemize}
+  \fuente{BOE (08/12/2025) · Diario de León (28/05/2026) · Defensor del Pueblo}
+\end{frame}
+
+% 6.8 · Dinamarca
+\begin{frame}{Dinamarca: digital por defecto, con salida}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \cifra{10,7\,\%}{exentos a finales de 2015}
+    \column{0.45\textwidth}
+      \cifra{4,7\,\%}{exentos a inicios de 2026}
+  \end{columns}
+  \vspace{0.3cm}
+  \begin{center}
+    {\large \textbf{81\,\%} satisfecho · Exención municipal en papel para quien no puede}
+  \end{center}
+  \fuente{Digitaliseringsstyrelsen (1T 2026) · Copenhagen Economics (ene.\,2026)}
+\end{frame}
+
+% 6.9 · X-Road (actualizada con enfoque técnico y descentralizado)
+\begin{frame}{X-Road: arquitectura abierta y descentralizada}
+  \cifra{+3.000}{entidades conectadas sin base de datos única}
+  \begin{center}
+    {\large Licencia \textbf{MIT}: intercambio cifrado, trazable y auditable}
+  \end{center}
+  \fuente{e-Estonia · ITU · MIT Technology Review (vía t3n)}
+\end{frame}
+
+% 6.10 · Public Money? Public Code! (actualizada con los 3 pilares)
+\begin{frame}{Public Money? Public Code!}
+  \begin{center}
+    {\color{terra}\LARGE\bfseries «Public Money? Public Code!»}
+  \end{center}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item \textbf{Auditar reglas:} comprobar cómo decide el algoritmo.
+    \item \textbf{Interoperabilidad:} estándares abiertos sin depender de un sistema.
+    \item \textbf{Soberanía:} evitar cautiverio de proveedores y reutilizar código.
+  \end{itemize}
+  \fuente{FSFE (+31.000 firmas, $\sim$200 org.) · Barcelona, primer ayuntamiento firmante}
+\end{frame}
+
+% 6.11 · Conclusión del bloque (3 ideas directas)
+\begin{frame}{Lo que cuesta la ventanilla digital}
+  \begin{itemize}
+    \item El ahorro es real, pero lo mide la Administración.
+    \item El precio de quedarse fuera lo paga quien no puede usar el canal.
+    \item El código abierto \alert{\textbf{no cierra la brecha}}, pero permite auditar las reglas.
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+% CONCLUSIONES DE TODA LA PRESENTACIÓN
+% (3 diapositivas sin salto vertical: los ítems ocultos van en
+% color blanco para reservar exactamente su espacio en pantalla)
+% ============================================================
+\section{Conclusiones}
+
+\begin{frame}{Conclusiones}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item \textbf{El código ya es ley:} en la calle, en casa, en la red, en las urnas y en la ventanilla, un programa fija las reglas sin pasar por un parlamento.\vspace{0.3cm}
+    \item[\color{white}2.] {\color{white}\textbf{De promesas a garantías:} con código cerrado solo tenemos actos de fe; con software libre podemos auditar cómo nos vigilan, informan o atienden.}\vspace{0.3cm}
+    \item[\color{white}3.] {\color{white}\textbf{Abrir el código no basta:} hacen falta leyes que pongan límites y una alternativa presencial que no deje a nadie atrás.}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Conclusiones}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item \textbf{El código ya es ley:} en la calle, en casa, en la red, en las urnas y en la ventanilla, un programa fija las reglas sin pasar por un parlamento.\vspace{0.3cm}
+    \item \textbf{De promesas a garantías:} con código cerrado solo tenemos actos de fe; con software libre podemos auditar cómo nos vigilan, informan o atienden.\vspace{0.3cm}
+    \item[\color{white}3.] {\color{white}\textbf{Abrir el código no basta:} hacen falta leyes que pongan límites y una alternativa presencial que no deje a nadie atrás.}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Conclusiones}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item \textbf{El código ya es ley:} en la calle, en casa, en la red, en las urnas y en la ventanilla, un programa fija las reglas sin pasar por un parlamento.\vspace{0.3cm}
+    \item \textbf{De promesas a garantías:} con código cerrado solo tenemos actos de fe; con software libre podemos auditar cómo nos vigilan, informan o atienden.\vspace{0.3cm}
+    \item \textbf{Abrir el código no basta:} hacen falta leyes que pongan límites y una alternativa presencial que no deje a nadie atrás.
+  \end{enumerate}
+\end{frame}
 
 
 \end{document}
