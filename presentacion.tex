@@ -27,8 +27,15 @@
 \setbeamertemplate{navigation symbols}{}
 % Pie discreto: solo el número de transparencia (útil en el turno de
 % preguntas). Sin nombre ni título repetidos en cada página.
+% Navegación opcional en el pie: tema anterior (izq.) y siguiente (dcha.).
+% Se activa con \nav{anterior}{siguiente} antes de cada frame y se apaga con \nav{}{}.
+\def\navprev{}
+\def\navnext{}
+\newcommand{\nav}[2]{\gdef\navprev{#1}\gdef\navnext{#2}}
 \setbeamertemplate{footline}{%
-  \hfill{\small\color{gris}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.4cm}\vspace{0.3cm}}
+  \hspace{0.4cm}{\scriptsize\color{gris}\ifx\navprev\empty\else$\leftarrow$~\navprev\fi}%
+  \hfill{\scriptsize\color{gris}\ifx\navnext\empty\else\navnext~$\rightarrow$\fi}%
+  \hspace{0.6cm}{\small\color{gris}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.4cm}\vspace{0.3cm}}
 \setbeamerfont{itemize/enumerate body}{size=\large}
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries}
@@ -77,6 +84,7 @@
 % ============================================================
 \section{Presentación}
 % 2.1a · Code is Law (Lessig), justo cuando lo nombra
+\nav{}{Índice}
 \begin{frame}{El código es ley}
   \vspace{0.4cm}
   \begin{center}
@@ -89,8 +97,8 @@
 \end{frame}
 
 
-
 % 2.1c · Índice (gesto hacia la pantalla, sin leerlo)
+\nav{Code is Law}{}
 \begin{frame}{Cinco temas}
   \begin{enumerate}
     \item Reconocimiento facial y cámaras con IA \hfill \textit{Silvia}
@@ -105,9 +113,11 @@
 % BLOQUE 1 · SILVIA
 % ============================================================
 \section{Reconocimiento facial}
+\nav{}{}
 \bloque{1}{Reconocimiento facial\\y cámaras con IA}{Silvia}
 
 % 2.2 · Cómo identifica una cámara con IA
+\nav{}{Sesgos: Gender Shades}
 \begin{frame}{Cómo identifica una cámara con IA}
   \begin{center}
   \begin{tikzpicture}[
@@ -138,6 +148,7 @@
 \end{frame}
 
 % 2.3 · Sesgos
+\nav{Cámaras con IA}{Sesgos: NIST}
 \begin{frame}{El mito de la neutralidad algorítmica}
   {\large Error al clasificar el género (Gender Shades, 2018)}
   \begin{center}
@@ -157,6 +168,7 @@
 \end{frame}
 
 % 2.3b · NIST (tras el silencio de 2 s)
+\nav{Sesgos: Gender Shades}{EU AI Act}
 \begin{frame}{El mito de la neutralidad algorítmica}
   \vspace{0.2cm}
   \cifra{de 10 a +100}{veces más falsos positivos según el grupo}
@@ -169,6 +181,7 @@
 \end{frame}
 
 % 2.4 · Marco legal
+\nav{Sesgos: NIST}{Flock Safety}
 \begin{frame}{El freno europeo: EU AI Act}
   \begin{itemize}
     \item Biometría remota en tiempo real: \alert{\textbf{prohibida}}*
@@ -181,6 +194,7 @@
 % 2.5 · Flock: tecnología
 % (Si conseguís una foto libre de una cámara Flock, de 1024x768 o más y
 % con licencia CC BY / CC BY-SA, ponedla en una columna a la derecha.)
+\nav{EU AI Act}{Seguir personas}
 \begin{frame}{Flock Safety: vigilancia sin rostro}
   \begin{itemize}
     \item \textbf{+120.000} cámaras en 49 estados
@@ -195,6 +209,7 @@
 % CORREGIDO 23/11/2026: en Robinson se buscó por marca y modelo (las llantas
 % sirvieron después para reconocer el coche). Se quita «Red compartida entre
 % agencias de todo el país» porque ninguna fuente del pie lo respalda.
+\nav{Flock Safety}{Abusos}
 \begin{frame}{De leer matrículas a seguir personas}
   \begin{itemize}
     \item Busca coches \alert{\textbf{sin matrícula}}: marca y modelo
@@ -205,6 +220,7 @@
 \end{frame}
 
 % 2.7 · Controversias
+\nav{Seguir personas}{Puerta trasera}
 \begin{frame}{Abusos sin orden judicial}
   \begin{itemize}
     \item Sin orden judicial: Virginia lo avala (2026)
@@ -216,6 +232,7 @@
 \end{frame}
 
 % 2.8 · Caso inmigración
+\nav{Abusos}{Presión ciudadana}
 \begin{frame}{La puerta trasera de la red}
   \begin{columns}[T]
     \column{0.31\textwidth}
@@ -240,6 +257,7 @@
 % 2.9 · Reacción social
 % CORREGIDO 23/11/2026: 303 no se pudo confirmar; última cifra verificable
 % del Institute for Justice, 247 (The Marshall Project, 03/10/2026).
+\nav{Puerta trasera}{Stallman}
 \begin{frame}{La presión ciudadana frena la red}
   \begin{itemize}
     \item \alert{\textbf{247}} gobiernos locales dejan sus cámaras de matrículas
@@ -254,6 +272,7 @@
 % (Si añadís una captura del mapa de maps.deflock.org u OpenStreetMap,
 % indicad «Datos © OpenStreetMap contributors, ODbL».)
 % 2.10a · Cita de Stallman
+\nav{Presión ciudadana}{DeFlock}
 \begin{frame}{Software libre: recuperar el control}
   \vspace{0.8cm}
   \begin{center}
@@ -266,6 +285,7 @@
 \end{frame}
 
 % 2.10b · DeFlock
+\nav{Stallman}{Frigate}
 \begin{frame}{DeFlock: vigilar al que vigila}
   \begin{itemize}
     \item Programa libre (MIT) con voluntarios
@@ -277,6 +297,7 @@
 \end{frame}
 
 % 2.10c · Frigate
+\nav{DeFlock}{Cierre}
 \begin{frame}{Frigate: los datos se quedan en casa}
   \begin{itemize}
     \item Lee matrículas en tu \textbf{propio} ordenador
@@ -287,6 +308,7 @@
 \end{frame}
 
 % 2.11 · Conclusión del bloque: vuelta a Lessig
+\nav{Frigate}{}
 \begin{frame}{En la calle, el código ya es ley}
   \vspace{0.3cm}
   {\Large Decide el programa de Flock, \alert{\textbf{no un parlamento}}.\par}
@@ -294,11 +316,11 @@
   {\Large Código libre: de promesas a garantías verificables.\par}
   \fuente{«Code is Law» · Lawrence Lessig}
 \end{frame}
-
 % ============================================================
 % BLOQUE 2 · OSSAMA
 % ============================================================
 \section{Control cotidiano}
+\nav{}{}
 \bloque{2}{Control cotidiano: del crédito\\social al altavoz de casa}{Ossama}
 
 \newcommand{\cifram}[2]{%
@@ -308,6 +330,7 @@
   \end{center}}
 
 % 3.1 · China: tres capas (escenas 1 y 2)
+\nav{}{Occidente}
 \begin{frame}{China: ¿una nota para cada persona?}
   \begin{columns}[T]
     \column{0.31\textwidth}
@@ -328,6 +351,7 @@
 \end{frame}
 
 % 3.1 · Occidente (escena 3)
+\nav{China}{Uso estatal}
 \begin{frame}{En Occidente, con otro nombre}
   \begin{itemize}
     \item EE.\,UU.: FICO (300--850) · España: CIRBE, Equifax, Experian · Alemania: SCHUFA
@@ -339,6 +363,7 @@
 \end{frame}
 
 % 3.1 · Estado (escena 4)
+\nav{Occidente}{Singapur}
 \begin{frame}{Cuando lo usa el Estado}
   \begin{columns}[T]
     \column{0.31\textwidth}
@@ -355,6 +380,7 @@
 \end{frame}
 
 % 3.2 · Singapur (escena 5)
+\nav{Uso estatal}{Dónde van los datos}
 \begin{frame}{Singapur: la promesa rota}
   \begin{center}
   \begin{tikzpicture}[
@@ -375,6 +401,7 @@
 \end{frame}
 
 % 3.2 · Centralizado frente a descentralizado (escena 5)
+\nav{Singapur}{Micrófono atento}
 \begin{frame}{Dónde se guardan los datos}
   \begin{columns}[T]
     \column{0.45\textwidth}
@@ -396,6 +423,7 @@
 \end{frame}
 
 % 3.3 · Micrófono siempre atento (escena 6)
+\nav{Dónde van los datos}{Amazon}
 \begin{frame}{Un micrófono siempre atento}
   \begin{columns}[T]
     \column{0.45\textwidth}
@@ -411,6 +439,7 @@
 \end{frame}
 
 % 3.3 · Amazon: del audio a la publicidad (escena 6)
+\nav{Micrófono atento}{Localización sin GPS}
 \begin{frame}{Amazon: del audio a la publicidad}
   \begin{itemize}
     \item \alert{\textbf{25\,M\$}} de multa (2023) por conservar voces de niños
@@ -433,6 +462,7 @@
 \end{frame}
 
 % 3.4 · Home Assistant (escena 8)
+\nav{Localización sin GPS}{F-Droid}
 \begin{frame}{Asistente de voz sin nube: Home Assistant}
   \begin{center}
   \begin{tikzpicture}[
@@ -458,6 +488,7 @@
 \end{frame}
 
 % 3.4 · F-Droid (escena 8)
+\nav{Home Assistant}{Móvil sin Google}
 \begin{frame}{F-Droid: solo software libre}
   \cifra{10}{etiquetas Anti-Features: anuncios, rastreo, dependencias no libres}
   \begin{itemize}
@@ -469,6 +500,7 @@
 \end{frame}
 
 % 3.4 · Sistemas operativos libres (escena 8)
+\nav{F-Droid}{Cierre}
 \begin{frame}{Un móvil sin Google}
   \begin{columns}[T]
     \column{0.45\textwidth}
@@ -490,20 +522,22 @@
 \end{frame}
 
 % 3.5 · Conclusión del bloque (escena 9)
+\nav{Móvil sin Google}{}
 \begin{frame}{En casa y en el bolsillo, el código decide}
   \vspace{0.3cm}
   {\Large Código cerrado: \alert{\textbf{promesas}}.\par}
   \vspace{0.8cm}
   {\Large Código abierto y datos en local: garantías verificables.\par}
 \end{frame}
-
 % ============================================================
-% BLOQUE 4 · MAR
+% BLOQUE 3 · MAR
 % Necesita en el preámbulo: \usepackage{tikz} (sin librerías extra)
 % ============================================================
-\bloque{4}{Espacio público digital:\\desinformación y censura}{Mar}
+\nav{}{}
+\bloque{3}{Espacio público digital:\\desinformación y censura}{Mar}
 
 \section{Introducción}
+\nav{}{Software libre}
 \begin{frame}{Tres decisiones que hoy toma el software}
   \begin{itemize}
     \item \textbf{Qué nos creemos:} mensajes a medida y deepfakes.
@@ -514,6 +548,7 @@
   {\large\alert{Y qué cambia cuando el código es libre.}}
 \end{frame}
 
+\nav{Tres decisiones}{Cambridge Analytica}
 \begin{frame}{¿Qué tiene que ver el software libre?}
   \begin{itemize}
     \item Silvia: la libertad de \textbf{estudiar} el código.
@@ -528,6 +563,7 @@
 \end{frame}
 
 \section{Qué nos creemos}
+\nav{Software libre}{Deepfake en Eslovaquia}
 \begin{frame}{Cambridge Analytica (2016)}
   \cifra{87 millones}{de perfiles recogidos con solo 305.000 tests}
   \begin{itemize}
@@ -538,31 +574,35 @@
   {\large\alert{No fue un hackeo: fue una regla del código de Facebook.}}
 \end{frame}
 
+\nav{Cambridge Analytica}{Deepfakes en Colombia}
 \begin{frame}{Deepfake: el audio falso de Eslovaquia (2023)}
   \begin{itemize}
-    \item Dos días antes de votar aparece un audio falso de un candidato.
+    \item Dos días antes de votar aparece un audio falso de un candidato (Michal Šimečka)
     \item Cae en el silencio electoral: casi no se puede desmentir.
   \end{itemize}
   \vspace{0.5cm}
   {\large\alert{¿Sabríais que es falso?}}
 \end{frame}
 
+\nav{Deepfake en Eslovaquia}{Algoritmos}
 \begin{frame}{Deepfakes en campaña: Colombia (2026)}
-  \cifra{2,6 millones}{de reproducciones de vídeos con voz clonada}
+  \cifra{2,6 millones}{de reproducciones de vídeos con voz clonada (12 vídeos)}
   \begin{itemize}
+    \item Antes de la segunda vuelta presidencial $\to$ Iván Cepeda.
     \item Dos circularon como \textbf{anuncios pagados} en Meta.
   \end{itemize}
   \vspace{0.4cm}
   {\alert{Abrir el código no impide los falsos,\\pero sí comprobar los detectores.}}
 \end{frame}
 
+\nav{Deepfakes en Colombia}{Apagones de internet}
 \begin{frame}{Algoritmos: una caja negra}
   \begin{columns}[T]
     \column{0.48\textwidth}
       \textbf{Cerrado}
       \begin{itemize}
         \item Optimiza tu atención.
-        \item TikTok (nov.\,2026): la UE ve un efecto ``madriguera''.
+        \item Art 38. Ley de Servicios Digitales $\to$ TikTok (nov.\,2026): la UE ve un efecto ``madriguera''.
       \end{itemize}
     \column{0.48\textwidth}
       \textbf{Libre}
@@ -575,32 +615,28 @@
   {\large\alert{La ley da a elegir;\\el código abierto permite comprobar.}}
 \end{frame}
 
+\nav{Algoritmos}{Irán sin internet}
 \begin{frame}{Cómo se apaga internet}
   \begin{itemize}
-    \item \textbf{Borrar rutas} (Egipto, 2011)
-    \item \textbf{Bloquear webs} (Turquía, 2014)
-    \item \textbf{Ralentizar} la red
-    \item \textbf{Destruir} cables (Gaza)
+    \item \textbf{Borrar rutas} - op. internet
+    \item \textbf{Bloquear webs} - DNS
+    \item \textbf{Ralentizar} la red - proveedores
+    \item \textbf{Destruir} cables 
   \end{itemize}
   \cifra{313 apagones}{en 52 países en 2025}
   {\large\alert{Donde hay un centro, hay un interruptor.}}
 \end{frame}
 
-\begin{frame}{Tres casos}
-  \begin{columns}[T]
-    \column{0.32\textwidth}
-      \cifra{85}{apagones en Myanmar (2024)}
-    \column{0.32\textwidth}
-      \cifra{$\sim$70\,\%}{del año sin internet global en Irán (hasta mayo de 2026)}
-    \column{0.32\textwidth}
-      \cifra{7 días}{de apagón total en Gaza (2024)}
-  \end{columns}
+\nav{Apagones de internet}{Censura y desinformación}
+\begin{frame}{Censura y desinformación se refuerza}
+  \cifra{$\sim$70\,\%}{del año sin internet global en Irán (hasta mayo de 2026)}
   \vspace{0.4cm}
   \begin{center}
-    Los apagones acompañan a la represión y a la guerra.
+    Los apagones acompañan a la represión y a la guerra. No son para todo el mundo, sino para quien no tiene permiso.
   \end{center}
 \end{frame}
 
+\nav{Irán sin internet}{Tor y Snowflake}
 \begin{frame}{Censura y desinformación se refuerzan}
   \begin{center}
     \includegraphics[width=0.75\linewidth]{irangrafica.png}\\[-0.1cm]
@@ -611,6 +647,7 @@
 \end{frame}
 
 \section{Software libre: sin interruptor}
+\nav{Censura y desinformación}{Cierre}
 \begin{frame}{Tor y Snowflake: todos podemos ser puente}
   \centering
   \resizebox{0.95\textwidth}{!}{%
@@ -636,38 +673,7 @@
   {\large\alert{Tú puedes ser puente: basta una extensión del navegador.}}
 \end{frame}
 
-\begin{frame}{Redes sin centro}
-  \centering
-  \begin{tikzpicture}[
-      p/.style={circle, fill=gray!60, inner sep=0pt, minimum size=5pt},
-      c/.style={circle, fill=red!80, inner sep=0pt, minimum size=11pt}]
-    % Red centralizada
-    \begin{scope}
-      \node[c] (C) at (0,0) {};
-      \foreach \a in {0,40,...,320} {
-        \node[p] (n\a) at (\a:1.3) {};
-        \draw[gray] (C) -- (n\a);
-      }
-      \node[font=\small\bfseries, align=center] at (0,-1.9) {Plataforma central};
-      \node[font=\scriptsize, red, align=center] at (0,-2.3) {un interruptor lo apaga todo};
-    \end{scope}
-    % Red distribuida
-    \begin{scope}[xshift=5.5cm]
-      \foreach \i/\x/\y in {1/-1.2/0.9, 2/-0.3/1.2, 3/0.8/1.0, 4/1.3/0.1, 5/0.9/-0.9,
-                            6/-0.1/-1.2, 7/-1.1/-0.8, 8/-1.4/0.0, 9/-0.3/0.2, 10/0.5/-0.1}
-        \node[p] (m\i) at (\x,\y) {};
-      \foreach \a/\b in {1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/1,9/1,9/2,9/7,9/10,10/3,10/4,10/5,10/6,8/9}
-        \draw[gray] (m\a) -- (m\b);
-      \node[font=\small\bfseries, align=center] at (0,-1.9) {Briar, Fediverso};
-      \node[font=\scriptsize, green!50!black, align=center] at (0,-2.3) {si cae un nodo, el resto sigue};
-    \end{scope}
-  \end{tikzpicture}
-  \vspace{0.4cm}
-
-  {\large\alert{Si no hay centro, no hay interruptor.}}\\[0.2cm]
-  {\small Límite: sin conexión física solo queda el satélite, y también se persigue.}
-\end{frame}
-
+\nav{Tor y Snowflake}{}
 \begin{frame}
   \begin{center}
     {\small Qué creemos \quad·\quad Qué vemos \quad·\quad Si nos conectamos}\\[0.9cm]
@@ -677,13 +683,16 @@
   \end{center}
 \end{frame}
 
+\nav{}{}
 % ============================================================
 % BLOQUE 4 · HÉCTOR
 % ============================================================
 \section{Votación electrónica}
+\nav{}{}
 \bloque{4}{Votación electrónica}{Héctor}
 
 % 4.1 · Apertura y mapa del bloque
+\nav{}{Papel vs. electrónico}
 \begin{frame}{¿Por qué votar no es como hacer un Bizum?}
   \begin{enumerate}
     \item \textbf{Papel frente a urna digital:} qué cambia y qué está en juego.
@@ -696,6 +705,7 @@
 \end{frame}
 
 % 5.2 · Tabla comparativa: papel vs. voto electrónico
+\nav{Introducción}{Voto tradicional}
 \begin{frame}{Voto en papel frente a voto electrónico}
   \begin{center}
   \small
@@ -717,6 +727,7 @@
 \end{frame}
 
 % 5.3 · Países que apuestan por el voto tradicional
+\nav{Papel vs. electrónico}{Experiencia internacional}
 \begin{frame}{Voto tradicional: España y Alemania}
   \begin{columns}[T]
     \column{0.47\textwidth}
@@ -739,6 +750,7 @@
 \end{frame}
 
 % 5.4 · Países que lo han implementado o intentado
+\nav{Voto tradicional}{Voatz}
 \begin{frame}{Países que han probado el voto electrónico}
   \begin{columns}[T]
     \column{0.47\textwidth}
@@ -769,6 +781,7 @@
 \end{frame}
 
 % 5.5 · Ejemplo privativo: Voatz
+\nav{Experiencia internacional}{Voatz, Helios, Belenios}
 \begin{frame}{Código cerrado: el caso Voatz}
   \begin{itemize}
     \item App móvil de votación con \textit{blockchain} y \textbf{código privativo}.
@@ -786,6 +799,7 @@
 \end{frame}
 
 % 5.6 · Tabla comparativa: Voatz vs. Helios vs. Belenios
+\nav{Voatz}{Blockchain}
 \begin{frame}{Código cerrado frente a software libre}
   \begin{center}
   \small
@@ -805,6 +819,7 @@
 \end{frame}
 
 % 5.7 · Blockchain: flujo de 5 pasos + 5 capas de seguridad
+\nav{Voatz, Helios, Belenios}{Límites}
 \begin{frame}{Blockchain: flujo y capas de seguridad}
   \begin{center}
   \begin{tikzpicture}[
@@ -839,6 +854,7 @@
 \end{frame}
 
 % 5.8 · Límites y conclusión del bloque
+\nav{Blockchain}{}
 \begin{frame}{Dos muros que la tecnología no derriba}
   \begin{columns}[T]
     \column{0.47\textwidth}
@@ -866,9 +882,11 @@
 % BLOQUE 5 · ONA
 % ============================================================
 \section{Administración electrónica}
+\nav{}{}
 \bloque{5}{Administración electrónica:\\¿derechos o barreras?}{Ona}
 
 % 6.1 · Apertura (gancho de la baja médica y el 92 %)
+\nav{}{Tesis}
 \begin{frame}{Cuando el papel desaparece}
   \begin{columns}[T]
     \column{0.47\textwidth}
@@ -880,6 +898,7 @@
 \end{frame}
 
 % 6.2 · Tesis (una sola idea, lectura en 3 segundos)
+\nav{Sin papel}{Estonia}
 \begin{frame}{Una opción suma. La única puerta resta.}
   \vspace{0.5cm}
   \begin{center}
@@ -889,6 +908,7 @@
 \end{frame}
 
 % 6.3 · Estonia
+\nav{Tesis}{Doble muro}
 \begin{frame}{Estonia: el ahorro es real}
   \begin{columns}[T]
     \column{0.45\textwidth}
@@ -900,6 +920,7 @@
 \end{frame}
 
 % 6.4 · España: el doble muro
+\nav{Estonia}{Quién queda fuera}
 \begin{frame}{España: el «doble muro» digital}
   \begin{center}
     \begin{tikzpicture}[
@@ -918,12 +939,14 @@
 \end{frame}
 
 % 6.5 · Tres de cada diez
+\nav{Doble muro}{Brecha por edad}
 \begin{frame}{¿Quién queda fuera?}
   \cifra{3 de cada 10}{no llegan a habilidades digitales básicas (16--74 años)}
   \fuente{INE, TIC-H 2026: 26,6\,\% habilidades bajas + 2,4\,\% sin uso de internet}
 \end{frame}
 
 % 6.6 · Gráfico de barras (guía visual por color: gris vs. terra)
+\nav{Quién queda fuera}{Ventanilla}
 \begin{frame}{Sin habilidades digitales básicas (\%)}
   \begin{center}
   \begin{tikzpicture}[x=1cm,y=0.042cm,font=\large]
@@ -939,6 +962,7 @@
 \end{frame}
 
 % 6.7 · Ventanilla (3 puntos cortos, máx. 1 nivel de indentación)
+\nav{Brecha por edad}{Dinamarca}
 \begin{frame}{La respuesta llega por la ventanilla}
   \begin{itemize}
     \item \textbf{Cataluña (Ley 9/2025):} cita previa prohibida como obligación.
@@ -949,6 +973,7 @@
 \end{frame}
 
 % 6.8 · Dinamarca
+\nav{Ventanilla}{X-Road}
 \begin{frame}{Dinamarca: digital por defecto, con salida}
   \begin{columns}[T]
     \column{0.45\textwidth}
@@ -964,6 +989,7 @@
 \end{frame}
 
 % 6.9 · X-Road (actualizada con enfoque técnico y descentralizado)
+\nav{Dinamarca}{Public Code}
 \begin{frame}{X-Road: arquitectura abierta y descentralizada}
   \cifra{+3.000}{entidades conectadas sin base de datos única}
   \begin{center}
@@ -973,6 +999,7 @@
 \end{frame}
 
 % 6.10 · Public Money? Public Code! (actualizada con los 3 pilares)
+\nav{X-Road}{Cierre}
 \begin{frame}{Public Money? Public Code!}
   \begin{center}
     {\color{terra}\LARGE\bfseries «Public Money? Public Code!»}
@@ -987,6 +1014,7 @@
 \end{frame}
 
 % 6.11 · Conclusión del bloque (3 ideas directas)
+\nav{Public Code}{}
 \begin{frame}{Lo que cuesta la ventanilla digital}
   \begin{itemize}
     \item El ahorro es real, pero lo mide la Administración.
@@ -1000,6 +1028,7 @@
 % (3 diapositivas sin salto vertical: los ítems ocultos van en
 % color blanco para reservar exactamente su espacio en pantalla)
 % ============================================================
+\nav{}{}
 \section{Conclusiones}
 
 \begin{frame}{Conclusiones}
