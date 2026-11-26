@@ -403,6 +403,7 @@
 % 3.2 · Centralizado frente a descentralizado (escena 5)
 \nav{Singapur}{Micrófono atento}
 \begin{frame}{Dónde se guardan los datos}
+  \vspace{-0.2cm}
   \begin{columns}[T]
     \column{0.45\textwidth}
       \begin{center}{\large\bfseries\color{terra}Centralizado}\\[-0.1cm]{\normalsize TraceTogether}\end{center}
@@ -639,9 +640,16 @@
 \nav{Irán sin internet}{Tor y Snowflake}
 \begin{frame}{Censura y desinformación se refuerzan}
   \begin{center}
-    \includegraphics[width=0.75\linewidth]{irangrafica.png}\\[-0.1cm]
-    {\tiny Tráfico de internet en Irán, dic.\,2025--ene.\,2026. Fuente: Cloudflare Radar.}\\[0.4cm]
-    {\large Con Irán desconectado, el régimen pudo hacer pasar\\vídeos reales por deepfakes.}\\[0.3cm]
+    \IfFileExists{irangrafica.png}{%
+      \includegraphics[width=0.75\linewidth,height=0.42\textheight,keepaspectratio]{irangrafica.png}\\[-0.1cm]%
+    }{%
+      \begin{tikzpicture}
+        \node[draw=gris,dashed,thick,rounded corners=4pt,minimum width=9.5cm,minimum height=2.4cm,align=center,text=gris]
+          {Imagen pendiente: \texttt{irangrafica.png}};
+      \end{tikzpicture}\\[0.1cm]%
+    }%
+    {\tiny Tráfico de internet en Irán, dic.\,2025--ene.\,2026. Fuente: Cloudflare Radar.}\\[0.35cm]
+    {\large Con Irán desconectado, el régimen pudo hacer pasar\\vídeos reales por deepfakes.}\\[0.25cm]
     \alert{\Large Sin red, nadie puede verificar.}
   \end{center}
 \end{frame}
@@ -691,161 +699,141 @@
 \nav{}{}
 \bloque{4}{Votación electrónica}{Héctor}
 
-% 4.1 · Apertura y mapa del bloque
+% 4.1 · Apertura: Bizum vs. Voto (una sola idea, sin índice leído)
 \nav{}{Papel vs. electrónico}
-\begin{frame}{¿Por qué votar no es como hacer un Bizum?}
-  \begin{enumerate}
-    \item \textbf{Papel frente a urna digital:} qué cambia y qué está en juego.
-    \item \textbf{Experiencia internacional:} qué ha pasado al probarlo.
-    \item \textbf{Código cerrado frente a libre:} Voatz, Helios y Belenios.
-    \item \textbf{Blockchain:} cómo funciona y dónde están sus límites.
-  \end{enumerate}
+\begin{frame}{¿Votarías igual que haces un Bizum?}
   \vspace{0.4cm}
-  {\large\alert{La ciudadanía debe poder verificar cada paso del proceso electoral.}}
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      {\color{azul}\Large\bfseries Hacer un Bizum}\\[0.3cm]
+      \begin{itemize}
+        \item El banco ve importe, concepto y destinatario.
+        \item Confías en un intermediario cerrado.
+      \end{itemize}
+    \column{0.46\textwidth}
+      {\color{terra}\Large\bfseries Emitir un voto}\\[0.3cm]
+      \begin{itemize}
+        \item Debe ser \alert{\textbf{secreto}} y libre.
+        \item Debe ser \alert{\textbf{verificable}} por la ciudadanía.
+      \end{itemize}
+  \end{columns}
 \end{frame}
 
-% 5.2 · Tabla comparativa: papel vs. voto electrónico
-\nav{Introducción}{Voto tradicional}
-\begin{frame}{Voto en papel frente a voto electrónico}
+% 4.2 · Tabla comparativa a pantalla completa (mínimo 24 pt = \normalsize)
+\nav{Bizum vs. voto}{Voto tradicional}
+\begin{frame}{Papel frente a voto electrónico}
   \begin{center}
-  \small
-  \renewcommand{\arraystretch}{1.25}
-  \begin{tabular}{p{2.4cm} p{4.6cm} p{4.6cm}}
-    & {\color{azul}\normalsize\bfseries Voto en papel} & {\color{terra}\normalsize\bfseries Voto electrónico} \\
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{p{2.9cm} p{4.4cm} p{4.6cm}}
+    & {\color{azul}\large\bfseries Papel} & {\color{terra}\large\bfseries Electrónico} \\
     \hline
-    \textbf{Recuento} & \raggedright Manual, lento y con posible error humano & \raggedright Automático, rápido y menos errores de conteo \tabularnewline
+    \textbf{Recuento} & \raggedright Manual y lento & \raggedright Automático y rápido \tabularnewline
     \hline
-    \textbf{Logística} & \raggedright Urnas, papeletas y transporte masivo & \raggedright Mayor accesibilidad (incluso desde el móvil) \tabularnewline
+    \textbf{Logística} & \raggedright Urnas y transporte & \raggedright Mayor accesibilidad \tabularnewline
     \hline
-    \textbf{Riesgos} & \raggedright Manipulación localizada & \raggedright Ciberataques y fallos a gran escala \tabularnewline
+    \textbf{Riesgos} & \raggedright Error o fraude local & \raggedright Ciberataques a escala \tabularnewline
     \hline
-    \textbf{Supervisión} & \raggedright Proceso físico visible y comprensible & \raggedright Opaco si no es auditable \tabularnewline
+    \textbf{Supervisión} & \raggedright \textbf{Visible para cualquiera} & \raggedright \textcolor{terra}{\textbf{Opaca sin auditoría}} \tabularnewline
   \end{tabular}
   \end{center}
-  \vspace{0.2cm}
-  {\large\alert{Objetivo del voto electrónico:} ser \textbf{verificable}, \textbf{secreto} y \textbf{auditable}.}
 \end{frame}
 
-% 5.3 · Países que apuestan por el voto tradicional
+% 4.3 · Países que apuestan por el voto tradicional
 \nav{Papel vs. electrónico}{Experiencia internacional}
 \begin{frame}{Voto tradicional: España y Alemania}
+  \vspace{0.3cm}
   \begin{columns}[T]
-    \column{0.47\textwidth}
-      {\color{azul}\large\bfseries España}\\[0.15cm]
+    \column{0.46\textwidth}
+      {\color{azul}\Large\bfseries España}\\[0.25cm]
       \begin{itemize}
-        \item Voto presencial en papel como norma estatal.
         \item Pruebas piloto en 2004 y 2005.
-        \item Sin voto electrónico remoto con validez general.
+        \item Sigue el voto presencial en papel.
       \end{itemize}
-    \column{0.47\textwidth}
-      {\color{terra}\large\bfseries Alemania (2009)}\\[0.15cm]
+    \column{0.46\textwidth}
+      {\color{terra}\Large\bfseries Alemania (2009)}\\[0.25cm]
       \begin{itemize}
-        \item El Constitucional anuló las máquinas de 2005.
-        \item Ni votantes ni mesas podían verificar el registro.
-        \item Exigió supervisión sin conocimientos técnicos.
+        \item El Constitucional anula las máquinas de 2005.
+        \item Exige comprobar el escrutinio \alert{\textbf{sin conocimientos técnicos}}.
       \end{itemize}
   \end{columns}
-  \vspace{0.3cm}
-  {\large\alert{No se prohibió votar electrónicamente, sino no poder comprobar el escrutinio.}}
 \end{frame}
 
-% 5.4 · Países que lo han implementado o intentado
+% 4.4 · Países que han probado el voto electrónico
 \nav{Voto tradicional}{Voatz}
 \begin{frame}{Países que han probado el voto electrónico}
-  \begin{columns}[T]
-    \column{0.47\textwidth}
-      {\color{azul}\large\bfseries Brasil}\\[-0.15cm]
-      \begin{itemize}
-        \item Urnas electrónicas desde 2000, siempre \textbf{presenciales}.
-      \end{itemize}
-      \vspace{0.1cm}
-      {\color{azul}\large\bfseries India}\\[-0.15cm]
-      \begin{itemize}
-        \item Desde 1989; $\sim$1\,M de máquinas en 2004 ($>$670\,M de votantes).
-        \item Fallos revelados en 2006.
-      \end{itemize}
-    \column{0.47\textwidth}
-      {\color{terra}\large\bfseries Estonia}\\[-0.15cm]
-      \begin{itemize}
-        \item Voto online desde 2005 (3,13\,\% en 2007), con \textbf{papel de respaldo}.
-        \item Auditorías señalan riesgos.
-      \end{itemize}
-      \vspace{0.1cm}
-      {\color{terra}\large\bfseries Países Bajos}\\[-0.15cm]
-      \begin{itemize}
-        \item En 2007 volvió al papel tras fallos graves en sus máquinas.
-      \end{itemize}
-  \end{columns}
-  \vspace{0.15cm}
-  {\large\alert{Implementar el voto electrónico no es una progresión lineal.}}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item \textbf{Brasil (2000):} urnas electrónicas, siempre presenciales.
+    \item \textbf{India (1989):} $>$670\,M de votantes; fallos en 2006.
+    \item \textbf{Estonia (2005):} voto online con \alert{\textbf{papel de respaldo}}.
+    \item \textbf{Países Bajos (2007):} \alert{\textbf{vuelta al papel}} tras fallos graves.
+  \end{itemize}
 \end{frame}
 
-% 5.5 · Ejemplo privativo: Voatz
+% 4.5 · Ejemplo privativo: Voatz (1 nivel, 3 puntos cortos)
 \nav{Experiencia internacional}{Voatz, Helios, Belenios}
 \begin{frame}{Código cerrado: el caso Voatz}
   \begin{itemize}
-    \item App móvil de votación con \textit{blockchain} y \textbf{código privativo}.
-    \item Auditoría del \textbf{MIT}: fallos para alterar, impedir o revelar el voto.
-    \begin{itemize}
-      \item \textit{Malware} o \textit{root} tomaba el control; la red filtraba datos del voto.
-      \item Un tercero podía exponer fotos y datos de identidad.
-      \item \textit{Blockchain} no protegía frente a ataques al servidor.
-    \end{itemize}
-    \item \textbf{Trail of Bits} confirmó fallos en auditoría y control de administradores.
+    \item App móvil con \textit{blockchain} y código \alert{\textbf{privativo}}.
+    \item Auditoría del MIT: \textit{malware}, filtración en red y datos expuestos.
+    \item Trail of Bits: fallos en registros y control de administradores.
   \end{itemize}
-  \vspace{0.2cm}
-  {\large\alert{Usar \textit{blockchain} no garantiza seguridad: el eslabón más débil es el dispositivo.}}
+  \vspace{0.35cm}
+  {\large El eslabón más débil es el \alert{\textbf{dispositivo del votante}}.}
   \fuente{MIT (2020) · Trail of Bits (2020)}
 \end{frame}
 
-% 5.6 · Tabla comparativa: Voatz vs. Helios vs. Belenios
+% 4.6 · Tabla comparativa a pantalla completa (mínimo 24 pt = \normalsize)
 \nav{Voatz}{Blockchain}
 \begin{frame}{Código cerrado frente a software libre}
   \begin{center}
-  \small
-  \renewcommand{\arraystretch}{1.15}
-  \begin{tabular}{p{1.9cm} p{3.3cm} p{3.3cm} p{3.4cm}}
-    & {\color{terra}\normalsize\bfseries Voatz} & {\color{azul}\normalsize\bfseries Helios} & {\color{azul}\normalsize\bfseries Belenios} \\
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{p{2.2cm} p{3.0cm} p{3.3cm} p{3.4cm}}
+    & {\color{terra}\large\bfseries Voatz} & {\color{azul}\large\bfseries Helios} & {\color{azul}\large\bfseries Belenios} \\
     \hline
-    \textbf{Licencia} & \raggedright Privativo (app móvil + \textit{blockchain}) & \raggedright Software libre (web, Ben Adida) & \raggedright Software libre (evolución de Helios) \tabularnewline
+    \textbf{Código} & \raggedright Privativo & \raggedright \textbf{Libre} (web) & \raggedright \textbf{Libre} (web) \tabularnewline
     \hline
-    \raggedright\textbf{Punto fuerte} & \raggedright Comodidad móvil & \raggedright Cifrado y pruebas verificables & \raggedright Más privacidad y defensa ante \textit{ballot stuffing} \tabularnewline
+    \textbf{Aporta} & \raggedright App móvil & \raggedright Cifrado verificable & \raggedright Frena el \textit{ballot stuffing} \tabularnewline
     \hline
-    \textbf{Límite} & \raggedright Opaco; fallos críticos en auditorías & \raggedright Confiar en que la urna no añada votos & \raggedright Depende del dispositivo y credenciales \tabularnewline
+    \textbf{Límite} & \raggedright \textcolor{terra}{\textbf{Opaco}} y vulnerable & \raggedright Confiar en la urna & \raggedright Dispositivo y credenciales \tabularnewline
   \end{tabular}
   \end{center}
-  \vspace{0.1cm}
-  {\large\alert{El software libre no elimina fallos, pero permite auditar y reproducir el recuento.}}
 \end{frame}
 
-% 5.7 · Blockchain: flujo de 5 pasos + 5 capas de seguridad
-\nav{Voatz, Helios, Belenios}{Límites}
-\begin{frame}{Blockchain: flujo y capas de seguridad}
+% 4.7 · Blockchain: flujo de 5 pasos (en 2 filas para mantener letra >= 24 pt)
+\nav{Voatz, Helios, Belenios}{Seguridad real}
+\begin{frame}{Cómo funciona el voto con blockchain}
   \begin{center}
   \begin{tikzpicture}[
-      paso/.style={draw=azul,very thick,rounded corners=4pt,minimum width=2.15cm,minimum height=1.1cm,inner sep=4pt,align=center,font=\scriptsize\bfseries},
+      paso/.style={draw=azul,very thick,rounded corners=4pt,minimum width=3.6cm,minimum height=1.3cm,inner sep=5pt,align=center,font=\normalsize\bfseries},
       flecha/.style={->,very thick,draw=gris}]
     \node[paso] (p1) at (0,0) {1. Identidad\\digital};
-    \node[paso] (p2) at (2.75,0) {2. Cifrado\\en el móvil};
-    \node[paso] (p3) at (5.50,0) {3. Registro\\en cadena};
-    \node[paso] (p4) at (8.25,0) {4. Descifrado\\y recuento};
-    \node[paso] (p5) at (11.00,0) {5. Pruebas\\verificables};
+    \node[paso] (p2) at (4.6,0) {2. Cifrado\\local};
+    \node[paso] (p3) at (9.2,0) {3. Registro\\en cadena};
+    \node[paso] (p4) at (2.3,-2.2) {4. Descifrado\\y recuento};
+    \node[paso] (p5) at (6.9,-2.2) {5. Pruebas\\verificables};
     \draw[flecha] (p1) -- (p2);
     \draw[flecha] (p2) -- (p3);
-    \draw[flecha] (p3) -- (p4);
+    \draw[flecha] (p3.south) -- ++(0,-0.45) -| (p4.north);
     \draw[flecha] (p4) -- (p5);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.2cm}
-  {\large\textbf{Cinco piezas de la seguridad real}} {\normalsize (Helios ya verifica sin \textit{blockchain}):}
+  \vspace{0.25cm}
+  {\large Helios ya cifra y verifica \alert{\textbf{sin blockchain}}.}
+\end{frame}
+
+% 4.8 · Cinco piezas de la seguridad real (una idea por transparencia)
+\nav{Blockchain}{Límites}
+\begin{frame}{Cinco piezas de la seguridad real}
+  \vspace{0.3cm}
   \begin{columns}[T]
-    \column{0.48\textwidth}
+    \column{0.47\textwidth}
       \begin{itemize}
-        \item Criptografía robusta
-        \item Claves repartidas entre autoridades
+        \item Criptografía
+        \item Claves repartidas (Belenios)
         \item Verificabilidad pública
       \end{itemize}
-    \column{0.48\textwidth}
+    \column{0.47\textwidth}
       \begin{itemize}
         \item Auditorías independientes
         \item \alert{\textbf{Papel de respaldo}}
@@ -853,29 +841,33 @@
   \end{columns}
 \end{frame}
 
-% 5.8 · Límites y conclusión del bloque
-\nav{Blockchain}{}
-\begin{frame}{Dos muros que la tecnología no derriba}
+% 4.9 · Dos muros que la blockchain no derriba
+\nav{Seguridad real}{Conclusión}
+\begin{frame}{Dos muros que la blockchain no derriba}
+  \vspace{0.3cm}
   \begin{columns}[T]
-    \column{0.47\textwidth}
-      {\color{terra}\large\bfseries Coacción y compra de votos}\\[0.15cm]
+    \column{0.46\textwidth}
+      {\color{terra}\Large\bfseries Coacción y compra}\\[0.25cm]
       \begin{itemize}
         \item Sin cabina electoral en casa.
-        \item Alguien puede ver tu pantalla o exigir tu clave.
-        \item Debilidad estructural del voto online.
+        \item Pueden ver tu pantalla o pedir tu clave.
       \end{itemize}
-    \column{0.47\textwidth}
-      {\color{terra}\large\bfseries Malware en el dispositivo}\\[0.15cm]
+    \column{0.46\textwidth}
+      {\color{terra}\Large\bfseries Malware local}\\[0.25cm]
       \begin{itemize}
-        \item Cambia el voto \textbf{antes} de cifrarlo y te engaña.
-        \item La criptografía no arregla un móvil comprometido.
-        \item Riesgos de duplicados y ataques DoS.
+        \item Altera el voto \alert{\textbf{antes}} de cifrarlo.
+        \item Riesgo de duplicados y ataques DoS.
       \end{itemize}
   \end{columns}
-  \vspace{0.25cm}
-  \begin{center}
-    {\normalsize\alert{\textbf{Sin software libre y sin supervisión ciudadana, la tecnología no refuerza la democracia: solo la vuelve opaca.}}}
-  \end{center}
+\end{frame}
+
+% 4.10 · Conclusión del bloque
+\nav{Límites}{}
+\begin{frame}{Sin código abierto, la urna es opaca}
+  \vspace{0.3cm}
+  {\Large La \textit{blockchain} mejora la trazabilidad, pero no sustituye dispositivos seguros ni el \textbf{papel de respaldo}.\par}
+  \vspace{0.8cm}
+  {\Large Sin \alert{\textbf{software libre}} ni \alert{\textbf{supervisión ciudadana}}, la tecnología vuelve opaca la democracia.\par}
 \end{frame}
 
 % ============================================================
